@@ -53,6 +53,34 @@ body{
 .hero h1{font-family:"Shippori Mincho",serif;font-weight:500;font-size:clamp(36px,6.5vw,68px);line-height:1.5;letter-spacing:.04em}
 .hero h1 .gl{color:var(--glow);text-shadow:0 0 28px rgba(127,214,255,.35)}
 .hero .sub{margin-top:40px;font-size:clamp(15px,2vw,18px);color:var(--soft);max-width:560px;line-height:2.2;font-weight:300}
+
+/* CTA buttons */
+.cta-btn{display:inline-flex;align-items:center;gap:11px;font-family:"Shippori Mincho",serif;font-size:15px;letter-spacing:.08em;color:var(--ink);text-decoration:none;border:1px solid rgba(127,214,255,.4);border-radius:40px;padding:14px 30px;background:rgba(127,214,255,.04);transition:border-color .5s,box-shadow .5s,color .5s}
+.cta-btn:hover{border-color:rgba(127,214,255,.7);box-shadow:0 0 36px rgba(127,214,255,.14);color:var(--glow)}
+.cta-btn .il{width:7px;height:7px;border-radius:50%;background:var(--glow);box-shadow:0 0 12px var(--glow);animation:pulse 3s ease-in-out infinite}
+.hero-cta{margin-top:48px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero-cta .cta-text{font-size:13px;color:var(--faint);letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:3px;transition:color .4s}
+.hero-cta .cta-text:hover{color:var(--soft)}
+.mid-cta{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.mid-cta-note{font-size:12px;color:var(--faint);letter-spacing:.08em}
+.quiet-door{margin-top:18px;font-size:12px;color:var(--faint);letter-spacing:.06em;text-decoration:none;opacity:.65;transition:opacity .5s,color .5s;border-bottom:1px solid transparent;padding-bottom:2px}
+.quiet-door:hover{opacity:1;color:var(--soft);border-bottom-color:var(--line-2)}
+.quiet-door .lat{color:var(--glow-deep)}
+
+/* the secret — AI as new hire */
+.hire{padding:110px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+.hire-q{font-family:"Shippori Mincho",serif;font-weight:500;font-size:clamp(22px,3.4vw,34px);line-height:1.85;letter-spacing:.05em;color:var(--ink)}
+.hire-q .gl{color:var(--glow);text-shadow:0 0 24px rgba(127,214,255,.3)}
+.hire-p{margin-top:36px;font-size:15.5px;color:var(--soft);line-height:2.3;max-width:600px}
+.hire-p b{color:var(--ink);font-weight:500}
+
+/* faq */
+.faq{padding:100px 0}
+.faq-list{margin-top:10px;border-top:1px solid var(--line)}
+.faq-item{padding:26px 4px;border-bottom:1px solid var(--line)}
+.faq-item .q{font-family:"Shippori Mincho",serif;font-weight:500;font-size:17px;letter-spacing:.04em;color:var(--ink);margin-bottom:12px}
+.faq-item .q::before{content:"Q ";font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--glow-deep)}
+.faq-item .a{font-size:14px;color:var(--soft);line-height:2;padding-left:22px}
 .hero .name-en{position:absolute;right:28px;bottom:90px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--faint);letter-spacing:.1em}
 @media(max-width:680px){.hero .name-en{display:none}}
 
@@ -111,6 +139,10 @@ section{padding:100px 0;position:relative}
 .curri .tag{flex-shrink:0;font-family:"Space Grotesk",sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);border:1px solid var(--line-2);border-radius:20px;padding:3px 10px;min-width:50px;text-align:center}
 .curri .tag.home{color:var(--glow-deep);border-color:rgba(58,155,212,.35)}
 .curri .tag.done{color:var(--glow);border-color:rgba(127,214,255,.5);background:rgba(127,214,255,.05)}
+.curri .tag.prem{color:var(--glow-deep);border-color:rgba(58,155,212,.4)}
+.curri .step-prem{background:rgba(127,214,255,.03)}
+.curri .step-prem .sno .prem-mark{font-size:18px;color:var(--glow-deep)}
+.curri .prem-badge{font-family:"Space Grotesk",sans-serif;font-size:10.5px;letter-spacing:.12em;color:var(--glow);border:1px solid rgba(127,214,255,.4);border-radius:20px;padding:2px 10px;margin-left:8px;vertical-align:middle}
 
 .ba .ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(16px,4vw,40px);align-items:center;margin-top:10px}
 .ba .ba-col{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 28px}
@@ -132,12 +164,20 @@ section{padding:100px 0;position:relative}
 .plans .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px;align-items:stretch}
 .plan{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:36px 30px;transition:border-color .5s,transform .5s}
 .plan:hover{border-color:var(--line-2);transform:translateY(-4px)}
-.plan.feat{border-color:rgba(127,214,255,.35);box-shadow:0 0 50px rgba(127,214,255,.06)}
+.plan.feat{border-color:rgba(127,214,255,.45);box-shadow:0 0 60px rgba(127,214,255,.10)}
 .plan .pn{font-family:"Shippori Mincho",serif;font-weight:500;font-size:23px;letter-spacing:.1em}
-.plan .pen{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--faint);margin:2px 0 22px}
+.plan .pen{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--faint);margin:2px 0 14px}
+.plan .who-for{font-size:12.5px;color:var(--glow-deep);letter-spacing:.06em;margin-bottom:18px}
+.plan.feat .who-for{color:var(--glow)}
 .plan .price{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:30px;color:var(--ink)}
 .plan .price .y{font-size:18px;color:var(--soft);margin-right:3px}
+.plan .price .per{font-size:18px;color:var(--soft)}
 .plan.feat .price{color:var(--glow)}
+.plan .pnote{font-size:11.5px;color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.plan.feat .pnote{color:var(--glow-deep)}
+.plan.feat{border-color:rgba(127,214,255,.45);box-shadow:0 0 60px rgba(127,214,255,.10);transform:scale(1.02)}
+.plan.feat:hover{transform:scale(1.02) translateY(-4px)}
+@media(max-width:680px){.plan.feat{transform:none}.plan.feat:hover{transform:translateY(-4px)}}
 .plan .mode{margin:18px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;color:var(--silver);letter-spacing:.05em}
 .plan .mode span{display:block;color:var(--faint);font-size:12px;margin-top:4px}
 .plan ul{list-style:none}
@@ -145,12 +185,37 @@ section{padding:100px 0;position:relative}
 .plan ul li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--glow-deep)}
 .plan .flag{position:absolute;top:-13px;left:30px;font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);border:1px solid rgba(127,214,255,.3);padding:5px 12px;border-radius:20px;background:var(--bg)}
 
+.compare{margin-top:64px}
+.compare table{width:100%;border-collapse:collapse}
+.compare th,.compare td{padding:16px 18px;text-align:center;font-size:13.5px;border-bottom:1px solid var(--line)}
+.compare thead th{font-family:"Shippori Mincho",serif;font-weight:500;font-size:15px;letter-spacing:.06em;color:var(--ink);border-bottom:1px solid var(--line-2);padding-bottom:18px}
+.compare thead th.hl,.compare td.hl{background:rgba(127,214,255,.045)}
+.compare thead th.hl{color:var(--glow)}
+.compare .rh{text-align:left;color:var(--faint);font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
+.compare tbody td{color:var(--soft)}
+.compare tbody td.hl{color:var(--ink)}
+.compare tbody tr:last-child td{border-bottom:none}
+.compare thead th.hl{border-top-left-radius:10px;border-top-right-radius:10px}
+.compare-note{margin-top:26px;font-size:12.5px;color:var(--faint);letter-spacing:.05em;text-align:center;line-height:1.9}
+@media(max-width:680px){.compare th,.compare td{padding:12px 8px;font-size:12px}.compare .rh{font-size:11px;white-space:normal}}
+
 /* method */
 .method .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:14px}
 .mcard{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:30px 26px}
 .mcard .ic{font-size:13px;letter-spacing:.2em;color:var(--glow-deep);font-family:"Space Grotesk",sans-serif;margin-bottom:14px}
 .mcard h4{font-family:"Shippori Mincho",serif;font-weight:500;font-size:20px;letter-spacing:.06em;margin-bottom:8px}
 .mcard p{font-size:13.5px;color:var(--soft);line-height:1.9}
+
+.beyond{padding:90px 0;border-top:1px solid var(--line)}
+.beyond-lead{text-align:center;font-size:15px;color:var(--soft);line-height:2.2;margin:18px auto 44px;max-width:520px}
+.beyond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+@media(max-width:600px){.beyond-grid{grid-template-columns:1fr}}
+.beyond-foot{text-align:center;font-size:13px;color:var(--faint);letter-spacing:.06em;margin-top:36px;line-height:1.9}
+.bcard{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:30px 28px;transition:border-color .5s}
+.bcard:hover{border-color:rgba(127,214,255,.25)}
+.bcard .bh{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:var(--glow-deep);letter-spacing:.06em;margin-bottom:12px}
+.bcard h4{font-family:"Shippori Mincho",serif;font-weight:500;font-size:20px;letter-spacing:.06em;margin-bottom:10px}
+.bcard p{font-size:13.5px;color:var(--soft);line-height:1.9}
 
 /* closing */
 .closing{text-align:center;padding:130px 0}
@@ -184,7 +249,11 @@ section{padding:100px 0;position:relative}
   <div class="wrap">
     <div class="eyebrow reveal"><span class="dot"></span>Secret AI</div>
     <h1 class="reveal">AIを、<span class="gl">検索</span>で<br>終わらせない。</h1>
-    <p class="sub reveal">ChatGPTは開いている。質問もしている。<br>でも、事業は何も変わっていない ——<br>その静かな違和感の、出口へ。</p>
+    <p class="sub reveal">仕事はできる。ChatGPTも開いている。<br>なのに、AIは事業に効いていない ——<br>その違和感を抱えた事業主のための、出口です。</p>
+    <div class="hero-cta reveal">
+      <a class="cta-btn" href="#plans"><span class="il"></span>プランを見る</a>
+      <a class="cta-text" href="#line">紹介制の申込について</a>
+    </div>
     <div class="name-en lat">accelerate, privately</div>
   </div>
 </header>
@@ -206,6 +275,14 @@ section{padding:100px 0;position:relative}
       <div class="ft-item now"><div class="lbl">from here</div><div class="word serif">動かす</div></div>
     </div>
     <p class="cap reveal">AIは、答えさせる道具ではなく、あなたの事業を形にする道具。聞くことから、作らせ・任せることへ。たった一段の移動が、すべてを変えます。</p>
+  </div>
+</section>
+
+<section class="hire">
+  <div class="narrow">
+    <div class="smark reveal">the secret</div>
+    <blockquote class="hire-q reveal">AIは、<span class="gl">超優秀な、新人</span>。<br>恐ろしく賢い。でも、あなたの事業の<br>どこに何があるかは、まだ知らない。</blockquote>
+    <p class="hire-p reveal">だから、丸投げしても期待外れの答えしか返ってこない。逆に、必要な背景（コンテキスト）をきちんと渡せば、新人は一気に戦力になります。Secret AI で教えるのは、検索ワードではなく <b>「優秀な新人に、何をどう渡すか」</b> ——。これは、使い込んだ人間にしか語れない、ここだけの勘所です。</p>
   </div>
 </section>
 
@@ -237,7 +314,7 @@ section{padding:100px 0;position:relative}
 
 <section class="curri">
   <div class="wrap">
-    <div class="smark reveal">five sessions</div>
+    <div class="smark reveal">five sessions <span style="color:var(--faint)">— and beyond</span></div>
     <p class="lead reveal">45分の講義で「考え方」を学び、宿題でAIを動かす。<br>次の回で、出てきたものを一緒に磨く。その往復で、作品が育ちます。</p>
     <div class="steps">
       <div class="step reveal">
@@ -280,6 +357,15 @@ section{padding:100px 0;position:relative}
           <div class="sline"><span class="tag done">完成</span>公開URLにして、世に出す</div>
         </div>
       </div>
+      <div class="step reveal step-prem">
+        <div class="sno lat">06<span class="prem-mark">— 08</span></div>
+        <div class="sbody">
+          <h4>アプリまで、作る <span class="prem-badge">プレミアム</span></h4>
+          <div class="sline"><span class="tag prem">06</span>Lovable・v0 の基本操作を知る</div>
+          <div class="sline"><span class="tag prem">07</span>ログインや予約のある簡単なシステムを作る</div>
+          <div class="sline"><span class="tag done">08・完成</span>仕上げて公開し、卒業</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -311,48 +397,176 @@ section{padding:100px 0;position:relative}
   </div>
 </section>
 
-<section class="plans">
+<section class="plans" id="plans">
   <div class="wrap">
     <div class="smark reveal">three ways in</div>
     <div class="grid">
       <div class="plan reveal">
         <div class="pn serif">ライト</div>
         <div class="pen lat">the entrance</div>
-        <div class="price"><span class="y">¥</span>148,000</div>
-        <div class="mode">3名グループ<span>オンライン</span></div>
-        <ul><li>予算0・無料ツールだけで</li><li>作品を一つ、公開できる形に</li><li>まず、AIが動く体験を</li></ul>
+        <div class="who-for">まず、気軽にはじめたい</div>
+        <div class="price"><span class="y">¥</span>148,000<span class="per"> 〜</span></div>
+        <div class="pnote">仲間・チームでの受講も可</div>
+        <div class="mode">少人数・オンライン<span>一人でも、仲間とでも</span></div>
+        <ul><li>無料ツールだけで完結</li><li>作品を一つ、公開できる形に</li><li>まず、AIが動く体験を</li></ul>
       </div>
       <div class="plan feat reveal">
         <div class="flag">most chosen</div>
         <div class="pn serif">スタンダード</div>
         <div class="pen lat">the craft</div>
+        <div class="who-for">自分の事業に、じっくり</div>
         <div class="price"><span class="y">¥</span>298,000</div>
-        <div class="mode">1on1<span>オンライン・マンツーマン</span></div>
+        <div class="pnote">いちばん選ばれています</div>
+        <div class="mode">1on1・オンライン<span>あなただけのマンツーマン</span></div>
         <ul><li>あなたの題材で制作</li><li>人に渡せる品質へ</li><li>30日のフォロー伴走</li></ul>
       </div>
       <div class="plan reveal">
         <div class="pn serif">プレミアム</div>
         <div class="pen lat">the atelier</div>
-        <div class="price"><span class="y">¥</span>550,000</div>
-        <div class="mode">1on1 ＋<span>完全オーダーメイド</span></div>
-        <ul><li>相談は回数無制限</li><li>あなた専用プロンプト集</li><li>事業×AIの設計図</li><li>プロのデザイナー相談</li></ul>
+        <div class="who-for">事業ごと、加速させたい</div>
+        <div class="price"><span class="y">¥</span>398,000</div>
+        <div class="pnote">ページの先、アプリまで</div>
+        <div class="mode">1on1 ＋・全8回<span>アプリまで完走・完全オーダーメイド</span></div>
+        <ul><li>ノーコードでアプリまで（Lovable・v0）</li><li>AIを事業に組み込む仕組みづくり</li><li>期間内サポート・専用プロンプト集</li><li>事業×AI設計図・卒業後の継続枠</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="compare reveal">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ライト</th>
+            <th class="hl">スタンダード</th>
+            <th>プレミアム</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rh">誰と受けるか</td>
+            <td>一人 / 仲間と</td>
+            <td class="hl">あなた一人</td>
+            <td>あなた一人</td>
+          </tr>
+          <tr>
+            <td class="rh">レッスン</td>
+            <td>少人数</td>
+            <td class="hl">1on1</td>
+            <td>1on1 ＋</td>
+          </tr>
+          <tr>
+            <td class="rh">講義（45分／回）</td>
+            <td>5回</td>
+            <td class="hl">5回</td>
+            <td>全8回（アプリまで）</td>
+          </tr>
+          <tr>
+            <td class="rh">作るもの</td>
+            <td>作品 一つ</td>
+            <td class="hl">あなたの LP・HP</td>
+            <td>HP ＋ アプリ・仕組み</td>
+          </tr>
+          <tr>
+            <td class="rh">使うツール</td>
+            <td>Claude</td>
+            <td class="hl">Claude</td>
+            <td>Claude ＋ Lovable・v0</td>
+          </tr>
+          <tr>
+            <td class="rh">卒業後のフォロー</td>
+            <td>軽め</td>
+            <td class="hl">30日</td>
+            <td>手厚く</td>
+          </tr>
+          <tr>
+            <td class="rh">専用プロンプト集・設計図</td>
+            <td>—</td>
+            <td class="hl">—</td>
+            <td>○</td>
+          </tr>
+          <tr>
+            <td class="rh">卒業後の継続枠</td>
+            <td>—</td>
+            <td class="hl">—</td>
+            <td>○</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="compare-note">学ぶ中身（コア）は、どのプランも共通。違いは「誰と・どこまで深く・何を作るか」だけ。</p>
+      <div class="mid-cta reveal">
+        <a class="cta-btn" href="#line"><span class="il"></span>このプランで相談する</a>
+        <div class="mid-cta-note">紹介制・少人数でひらいています</div>
+        <a class="quiet-door" href="Secret-AI-モジュール価格.html">個別に、ひとつずつ学びたい方へ <span class="lat">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="wrap">
+    <div class="smark reveal">how we work</div>
+    <div class="row">
+      <div class="mcard reveal"><div class="ic lat">private</div><h4>どこよりも、private。</h4><p>ビデオ教材でも、大人数の講座でもありません。全編、あなただけと向き合う、完全マンツーマン。</p></div>
+      <div class="mcard reveal"><div class="ic lat">flipped</div><h4>45分 × 5回〜</h4><p>講義では考え方を教え、AIを動かすのは宿題。待ち時間ゼロ、密度だけが残ります。プレミアムはアプリまで全8回。</p></div>
+      <div class="mcard reveal"><div class="ic lat">beside you</div><h4>どこよりも、伴走。</h4><p>教えて終わりではありません。あなたの言葉と事業に合わせ、最初の成果が出るまで、隣で。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="beyond">
+  <div class="narrow">
+    <div class="smark reveal" style="text-align:center">the next horizon</div>
+    <p class="beyond-lead reveal">Secret AI が教えるのは、ノーコードでアプリを作るところまで。<br>その先の領域は、無理に教えません ——<br>確かな専門パートナーと一緒に、形にします。</p>
+    <div class="beyond-grid">
+      <div class="bcard reveal">
+        <div class="bh lat">development</div>
+        <h4>本格的な開発</h4>
+        <p>ノーコードの先の、作り込んだシステム。専門の開発パートナーへおつなぎ、または一緒に。</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bh lat">ai video</div>
+        <h4>生成AIの動画制作</h4>
+        <p>AI動画は、その道のプロと。Secret AI が窓口となり、チームで対応します。</p>
+      </div>
+      <div class="bcard reveal">
+        <div class="bh lat">design</div>
+        <h4>プロのデザイナー</h4>
+        <p>AIだけでは届かない審美眼を。信頼できるデザイナーをおつなぎします。</p>
+      </div>
+    </div>
+    <p class="beyond-foot reveal">「自分で作れる」を超えたら、「託せる先がある」へ。必要なときだけ、個別にご案内します。</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="narrow">
+    <div class="smark reveal">your questions</div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="q">プログラミングや、コードの知識は要りますか？</div>
+        <div class="a">要りません。コードは見ません。日本語でAIに指示し、出てきたものを直していくだけ。主宰も、もとは医療職でした。</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="q">45分 × 5回で、本当に形になりますか？</div>
+        <div class="a">なります。講義では考え方を学び、AIを動かすのは宿題。その往復で作品が育ち、最後は公開URLまで持ち帰ります。アプリまで作るプレミアムは、全8回でじっくりと。</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="q">ChatGPTしか触ったことがありませんが、大丈夫ですか？</div>
+        <div class="a">むしろ、その方のための講座です。「検索」で止まっている状態から、事業の道具として動かせる状態まで、一対一で引き上げます。</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="q">Claudeは、お金がかかりますか？</div>
+        <div class="a">無料の範囲でも始められます。どこから課金すると事業が加速するのか、その見極めも講座の中でお伝えします。</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="q">途中で、つまずいたら？</div>
+        <div class="a">一対一なので、その場で立て直せます。卒業後も、プランに応じて伴走します。置いていきません。</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="method">
-  <div class="wrap">
-    <div class="smark reveal">how we work</div>
-    <div class="row">
-      <div class="mcard reveal"><div class="ic lat">live</div><h4>録画では、ない。</h4><p>ビデオ教材を見て自習する講座ではありません。全編、あなたと向き合うライブのマンツーマン。</p></div>
-      <div class="mcard reveal"><div class="ic lat">flipped</div><h4>45分 × 5回</h4><p>講義では考え方を教え、AIを動かすのは宿題。待ち時間ゼロ、密度だけが残ります。</p></div>
-      <div class="mcard reveal"><div class="ic lat">beside you</div><h4>3ヶ月、伴走</h4><p>作って終わりではなく、事業が一歩進むまで。あなたの言葉に合わせて、共に育てます。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="closing">
+<section class="closing" id="line">
   <div class="narrow">
     <h2 class="reveal">検索で終わる人から、<br><span class="gl">AIで事業を動かす人</span>へ。</h2>
     <p class="sub reveal">それは、特別な才能ではなく、<br>誰かが、あなただけに教えるかどうか。</p>
