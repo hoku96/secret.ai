@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret AI — 個別モジュールのご案内</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10;--bg-2:#0f1218;--panel:#12161e;
+  --ink:#eef1f6;--soft:#a7b0bf;--faint:#6b7484;
+  --line:rgba(180,200,230,.10);--line-2:rgba(180,200,230,.18);
+  --glow:#7fd6ff;--glow-deep:#3a9bd4;--silver:#c9d2de;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;font-weight:300;line-height:1.95;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+.serif{font-family:"Shippori Mincho",serif}
+.lat{font-family:"Cormorant Garamond",serif}
+.grotesk{font-family:"Space Grotesk",sans-serif}
+.wrap{max-width:840px;margin:0 auto;padding:0 28px}
+.field{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.18}
+.orb.a{width:480px;height:480px;background:radial-gradient(circle,#1e6f9e,transparent 70%);top:-160px;right:-120px}
+.content{position:relative;z-index:1}
+
+.head{padding:90px 0 50px;text-align:center}
+.head .kick{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--glow);letter-spacing:.05em;margin-bottom:26px}
+.head h1{font-family:"Shippori Mincho",serif;font-weight:500;font-size:clamp(26px,4.5vw,38px);line-height:1.6;letter-spacing:.07em}
+.head p{margin-top:28px;font-size:14px;color:var(--soft);max-width:520px;margin-left:auto;margin-right:auto;line-height:2.2}
+.rule{width:40px;height:1px;background:var(--line-2);margin:34px auto}
+
+.sec-mark{font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--glow-deep);margin-bottom:30px}
+
+/* modules */
+.modules{padding:30px 0 20px}
+.mod{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding:30px 0;border-top:1px solid var(--line)}
+.mod:last-child{border-bottom:1px solid var(--line)}
+.mod .idx{font-family:"Cormorant Garamond",serif;font-size:15px;color:var(--glow-deep);letter-spacing:.18em}
+.mod h3{font-family:"Shippori Mincho",serif;font-weight:500;font-size:21px;letter-spacing:.08em;margin:8px 0 6px}
+.mod .desc{font-size:13.5px;color:var(--soft);line-height:1.9;max-width:480px}
+.mod .meta{font-size:12px;color:var(--faint);margin-top:10px;letter-spacing:.04em}
+.mod .price{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:22px;color:var(--silver);white-space:nowrap;text-align:right}
+.mod .price .y{font-size:15px;color:var(--soft)}
+.mod .price small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;color:var(--faint);font-weight:300;margin-top:4px;letter-spacing:.04em}
+
+/* bundle comparison */
+.bundle{margin-top:70px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:18px;padding:44px 38px}
+.bundle .bmark{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;color:var(--glow);letter-spacing:.05em;text-align:center;margin-bottom:8px}
+.bundle h2{font-family:"Shippori Mincho",serif;font-weight:500;font-size:22px;letter-spacing:.1em;text-align:center;margin-bottom:36px}
+.brow{display:grid;grid-template-columns:1fr auto auto;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.brow.hd{font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line-2)}
+.brow .nm{color:var(--ink)}
+.brow .nm span{display:block;font-size:11.5px;color:var(--faint);margin-top:2px}
+.brow .sum{font-family:"Space Grotesk",sans-serif;color:var(--faint);text-decoration:line-through;text-align:right;white-space:nowrap}
+.brow .pkg{font-family:"Space Grotesk",sans-serif;font-weight:500;color:var(--glow);text-align:right;white-space:nowrap}
+.brow.feat{background:rgba(127,214,255,.04);margin:0 -14px;padding:18px 14px;border-radius:10px;border-bottom:1px solid var(--line)}
+.brow .save{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;color:var(--glow-deep);font-weight:400;margin-top:3px;letter-spacing:.04em}
+.bnote{margin-top:30px;text-align:center;font-size:13px;color:var(--soft);line-height:2;letter-spacing:.04em}
+.bnote b{color:var(--glow);font-weight:500}
+
+.beyond-note{margin-top:54px;padding:26px 28px;border-left:2px solid var(--line-2);background:var(--bg-2);border-radius:0}
+.beyond-note .bh{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:14px;color:var(--glow-deep);letter-spacing:.06em;margin-bottom:8px}
+.beyond-note p{font-size:13px;color:var(--soft);line-height:1.95}
+
+.foot{text-align:center;padding:60px 24px 70px}
+.foot .fl{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:var(--silver);letter-spacing:.1em}
+.foot .fj{margin-top:8px;font-family:"Shippori Mincho",serif;font-size:12px;color:var(--faint);letter-spacing:.14em}
+.foot .note{margin-top:20px;font-size:11px;color:var(--faint);letter-spacing:.04em}
+.foot .back{display:inline-block;margin-top:30px;font-size:12px;color:var(--faint);letter-spacing:.06em;text-decoration:none;opacity:.7;transition:opacity .4s,color .4s}
+.foot .back:hover{opacity:1;color:var(--soft)}
+.foot .back .lat{color:var(--glow-deep)}
+
+@media(max-width:560px){.mod{grid-template-columns:1fr;gap:10px}.mod .price{text-align:left}.brow{grid-template-columns:1fr auto;gap:10px}.brow .sum{display:none}.brow.hd .sum{display:none}}
+</style>
+</head>
+<body>
+<div class="field"><div class="orb a"></div></div>
+<div class="content">
+
+<header class="head">
+  <div class="wrap">
+    <div class="kick">à la carte</div>
+    <h1 class="serif">必要なところから、<br>個別に学ぶ。</h1>
+    <div class="rule"></div>
+    <p>Secret AI は、ひとつずつのモジュールでも受けられます。<br>けれど、まとめて受けるほど、深く、お得に。</p>
+  </div>
+</header>
+
+<section class="modules">
+  <div class="wrap">
+    <div class="sec-mark" style="text-align:center">the modules</div>
+
+    <div class="mod">
+      <div class="body">
+        <div class="idx lat">Ⅰ</div>
+        <h3 class="serif">AIの基礎</h3>
+        <div class="desc">AIとの付き合い方の土台。用語、ファイルの渡し方、モデルの選び方、そして「超有能な新人」にどう仕事を渡すか。どんな事業にも効く、最初の一歩。</div>
+        <div class="meta">45分 × 1〜2回 ／ オンライン</div>
+      </div>
+      <div class="price"><span class="y">¥</span>78,000<small>単体価格</small></div>
+    </div>
+
+    <div class="mod">
+      <div class="body">
+        <div class="idx lat">Ⅱ</div>
+        <h3 class="serif">LP・簡単なHP制作</h3>
+        <div class="desc">あなたの事業の題材で、見た目のいい1枚ページを。AIに指示して、出して、直す。最後は公開URLまで。検索で止まっていた人が、はじめて「作れる」を体験する。</div>
+        <div class="meta">45分 × 2〜3回 ／ オンライン</div>
+      </div>
+      <div class="price"><span class="y">¥</span>148,000<small>単体価格</small></div>
+    </div>
+
+    <div class="mod">
+      <div class="body">
+        <div class="idx lat">Ⅲ</div>
+        <h3 class="serif">しっかりしたHP制作</h3>
+        <div class="desc">複数ページの、人に渡せる本格的なサイト。構成・導線・仕上げまで。自分の事業の顔として、あるいは案件として通用する一式に。</div>
+        <div class="meta">45分 × 2〜3回 ／ オンライン</div>
+      </div>
+      <div class="price"><span class="y">¥</span>168,000<small>単体価格</small></div>
+    </div>
+
+    <div class="mod">
+      <div class="body">
+        <div class="idx lat">Ⅳ</div>
+        <h3 class="serif">アプリ制作（Lovable・v0）</h3>
+        <div class="desc">ページの先へ。ノーコードで、ログインや予約のある簡単なシステムを一つ。基本操作から、立ち上げまで。「自分で作れる」の最高峰。</div>
+        <div class="meta">45分 × 3回 ／ オンライン</div>
+      </div>
+      <div class="price"><span class="y">¥</span>198,000<small>単体価格</small></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="modules" style="padding-top:0">
+  <div class="wrap">
+    <div class="bundle">
+      <div class="bmark lat">but together —</div>
+      <h2 class="serif">まとめると、ずっとお得</h2>
+
+      <div class="brow hd"><div>パッケージ</div><div class="sum">バラ合計</div><div class="pkg" style="text-decoration:none;color:var(--faint)">パッケージ価格</div></div>
+
+      <div class="brow">
+        <div class="nm">スタンダード<span>基礎＋制作（Ⅰ＋Ⅱ）</span></div>
+        <div class="sum">¥226,000</div>
+        <div class="pkg">¥298,000</div>
+      </div>
+
+      <div class="brow feat">
+        <div class="nm">プレミアム<span>基礎＋制作＋しっかりHP＋アプリ（Ⅰ〜Ⅳ）</span></div>
+        <div class="sum">¥592,000</div>
+        <div class="pkg">¥398,000<span class="save">およそ ¥194,000 お得</span></div>
+      </div>
+
+      <div class="bnote">
+        ひとつずつ選べます。けれど ——<br><b>プレミアムは、4つのモジュールをすべて含んで ¥398,000。</b><br>バラで揃えるより、深く、ずっとお得に。
+      </div>
+    </div>
+
+    <div class="beyond-note">
+      <div class="bh lat">beyond the modules</div>
+      <p>本格的な開発・生成AIの動画制作・プロのデザイナーは、モジュールには含みません。これらは「教える」のではなく、確かな専門パートナーへおつなぎ／ご一緒する領域として、必要な方へ個別にご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="fl lat">Secret AI</div>
+  <div class="fj">必要なところから、けれど、まとめて深く。</div>
+  <div class="note">※ 価格は参考です。内容・回数はご相談に応じて調整します。</div>
+  <a class="back" href="index.html"><span class="lat">←</span> Secret AI のプランへ戻る</a>
+</footer>
+
+</div>
+</body>
+</html>
